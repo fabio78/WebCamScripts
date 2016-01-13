@@ -1,4 +1,5 @@
 #!/bin/bash
+# created by Floris van den Berg
 
 DATE=$(date +%Y%m%d)
 YESTERDAY=$(date -d '1 day ago' +%Y%m%d)
