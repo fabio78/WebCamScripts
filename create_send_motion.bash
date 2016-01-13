@@ -1,4 +1,5 @@
 #!/bin/bash
+# script makes video file out of jpg images and uploads the video file to a ftp server
 # created by Floris van den Berg
 
 DATE=$(date +%Y%m%d)
@@ -61,7 +62,7 @@ avconv -i all_$DATE.avi -acodec copy -vcodec copy daily_$DATE.pics.avi
 rm all_$DATE.avi
 
 
-mv /tmp/daily_$DATE.pics.avi /$FTPFOLDER
+mv /tmp/daily_$DATE.pics.avi /$PROJECTFOLDER
 rm /tmp/*avi
 
 wput --binary /$PROJECTFOLDER/daily_$DATE.pics.avi ftp://$FTPUSER:$FTPPASSWORDg@$FTPSERVER:$FTPPORT
