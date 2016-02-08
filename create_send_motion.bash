@@ -60,20 +60,17 @@ arr=( $(ls -tr /tmp/*avi) )
 cat ${arr[@]} > all_$DATE.avi
 avconv -i all_$DATE.avi -acodec copy -vcodec copy daily_$DATE.pics.avi
 rm all_$DATE.avi
-
-
-mv /tmp/daily_$DATE.pics.avi /$PROJECTFOLDER
 rm /tmp/*avi
 
-wput --binary /$PROJECTFOLDER/daily_$DATE.pics.avi ftp://$FTPUSER:$FTPPASSWORDg@$FTPSERVER:$FTPPORT
+wput --binary daily_$DATE.pics.avi ftp://$FTPUSER:$FTPPASSWORDg@$FTPSERVER:$FTPPORT/$PROJECTFOLDER/
 OUT=$?
 if [ "$OUT" = "0" ];then
    echo "Upload succesfull"
-   rm /$PROJECTFOLDER/daily_$DATE.pics.avi
+   rm daily_$DATE.pics.avi
 
 else
    echo "Upload failed"
-   mv /$PROJECTFOLDER/daily_$DATE.pics.avi /buffer
+   mv daily_$DATE.pics.avi /buffer
 fi
  
 
