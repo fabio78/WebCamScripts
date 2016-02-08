@@ -1,6 +1,6 @@
 #!/bin/bash
 # script makes video file out of jpg images and uploads the video file to a ftp server
-# created by Floris van den Berg
+# created by Floris van den Berg < info at linip dot nl >
 
 DATE=$(date +%Y%m%d)
 YESTERDAY=$(date -d '1 day ago' +%Y%m%d)
