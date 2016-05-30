@@ -62,7 +62,7 @@ avconv -i all_$DATE.avi -acodec copy -vcodec copy daily_$DATE.pics.avi
 rm all_$DATE.avi
 rm /tmp/*avi
 
-wput --binary daily_$DATE.pics.avi ftp://$FTPUSER:$FTPPASSWORDg@$FTPSERVER:$FTPPORT/$PROJECTFOLDER/
+wput --binary daily_$DATE.pics.avi ftp://$FTPUSER:$FTPPASSWORD@$FTPSERVER:$FTPPORT/$PROJECTFOLDER/
 OUT=$?
 if [ "$OUT" = "0" ];then
    echo "Upload succesfull"
